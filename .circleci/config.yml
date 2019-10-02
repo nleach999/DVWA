@@ -17,20 +17,19 @@ jobs:
           name: Execute CxSAST Scan
           command: |
             ~/cxcli/runCxConsole.sh Scan \
-              -CxServer ec2-18-188-248-130.us-east-2.compute.amazonaws.com \
-              -CxUser admin \
-              -CxPassword Password!123 \
-              -ProjectName 'CxServer\SP\Company\Users\dvwa' \
+              -CxServer ${CX_SERVER} \
+              -CxUser ${CX_USER} \
+              -CxPassword ${CX_PASSWORD} \
+              -ProjectName '${CX_TEAM}\${CX_PROJECT}' \
               -LocationType folder \
               -LocationPath ~/project \
-              -ReportXML report-file.xml \
-              -ReportPDF report-file.pdf \
-              -Comment 'Launched from CircleCI' \
+              -ReportXML ${CX_PROJECT}-results.xml \
+              -ReportPDF ${CX_PROJECT}-results.pdf \
+              -Comment 'git ${CIRCLE_BRANCH}@${CIRCLE_SHA1} ' \
               -verbose
 
-      - run: ls -lR ~/cxcli 
-
-      # - store_artifacts:
-      #   path: ~/cxcli
-      #   destination: sast_results  
+      # Store the generated reports with the build logs in CircleCI
+      - store_artifacts:
+        path: ~/cxcli/${CX_PROJECT}
+        destination: sast_results  
 
