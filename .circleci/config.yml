@@ -20,12 +20,12 @@ jobs:
               -CxServer $CX_SERVER \
               -CxUser $CX_USER \
               -CxPassword $CX_PASSWORD \
-              -ProjectName '$CX_TEAM\\$CX_PROJECT' \
+              -ProjectName "$CX_TEAM\\$CX_PROJECT" \
               -LocationType folder \
               -LocationPath ~/project \
               -ReportXML $CX_PROJECT-results.xml \
               -ReportPDF $CX_PROJECT-results.pdf \
-              -Comment 'git $CIRCLE_BRANCH@$CIRCLE_SHA1' \
+              -Comment "git $CIRCLE_BRANCH@$CIRCLE_SHA1" \
               -verbose
 
       # Store the generated reports with the build logs in CircleCI
