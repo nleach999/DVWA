@@ -1,4 +1,3 @@
-# This is a change to DEV, no scan because it is filtered.
 
 # DAMN VULNERABLE WEB APPLICATION
 
