@@ -11,7 +11,7 @@
 	"additionalProperties": {
 		"cxFlow": {
 			"application": "DVWA",
-			"branches": ["demo-master"],
+			"branches": ["master"],
 			"jira": {
 				"project": "SV"
 			}
