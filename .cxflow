@@ -1,0 +1,23 @@
+{
+	"version": 1.0,
+	"project" : "DVWA-${branch}",
+	"team": "/CxServer",
+	"sast": {
+		"preset": "Checkmarx Default",
+		"engineConfiguration": "Default Configuration",
+		"incremental": "false",
+		"forceScan": "true"
+	},
+	"additionalProperties": {
+		"cxFlow": {
+			"application": "DVWA",
+			"branches": ["demo-master"],
+			"jira": {
+				"project": "SV"
+			}
+		}
+	},
+	"sca" : {
+	  "team": "/CxServer/SCA-PM/Champions/NA-Partners"
+	}
+}
